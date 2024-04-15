@@ -4,6 +4,7 @@ use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
 
 #[Entity(role : 'mhlog', repository : MhLogRepository::class, table : 'maharder_logs')]
+//#[\Cycle\Annotated\Annotation\Inheritance\SingleTable]
 class MhLog extends BasisModel {
 	#[Column(type : 'string')]
 	private string            $type;

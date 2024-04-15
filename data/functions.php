@@ -43,21 +43,3 @@ if (!function_exists('dirToArray')) {
 	}
 }
 
-spl_autoload_register(function ($class_name) {
-	global $mh_loader_paths;
-
-	$found = false;
-
-	foreach ($mh_loader_paths as $path) {
-		$dir_data = dirToArray($path);
-		foreach ($dir_data as $data) {
-			if ($class_name === str_replace('.php', '', $data)) {
-				include_once "{$path}/{$data}";
-				$found = true;
-				break;
-			}
-		}
-		if ($found) break;
-	}
-
-});

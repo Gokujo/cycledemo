@@ -4,13 +4,11 @@ use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
 use Cycle\ORM\Entity\Behavior;
 
-#[Entity]
+
 #[Behavior\CreatedAt(
-	field: 'createdAt',
 	column: 'created_at'
 )]
 #[Behavior\UpdatedAt(
-	field: 'updatedAt',
 	column: 'updated_at'
 )]
 class BasisModel {

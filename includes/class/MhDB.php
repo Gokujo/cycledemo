@@ -83,10 +83,8 @@ class MhDB {
 	public function setEntity(object|string|null $entity) : void {
 		if ($entity === null) return;
 
-		$this->entity = $entity;
 		if (gettype($entity) === 'string') {
-			$repo   = $this->repository();
-			$entity = $repo->findAll()->orderBy('created_at')->limit(1)->fetchOne();
+			$entity = new $entity();
 		}
 		$this->entity = $entity;
 	}
